@@ -42,7 +42,7 @@ public class Jump : AbstractBehavior {
 
 	protected virtual void OnJump(){
 		var vel = body2d.velocity;
-		jumpSoundEffect.Play ();
+		//jumpSoundEffect.Play ();
 		body2d.velocity = new Vector2 (vel.x, jumpSpeed);
 	}
 }
