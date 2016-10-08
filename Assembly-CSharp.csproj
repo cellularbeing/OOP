@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Input\InputState.cs" />
      <Compile Include="Assets\Scripts\Managers\ObjectPooler.cs" />
      <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\SpearTrapManager.cs" />
      <Compile Include="Assets\Scripts\Options\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Options\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Options\Startup.cs" />
