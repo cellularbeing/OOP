@@ -67,10 +67,12 @@
      <Compile Include="Assets\Scripts\Options\Startup.cs" />
      <Compile Include="Assets\Scripts\TestScripts\ChangeCameraBounds.cs" />
      <Compile Include="Assets\Scripts\TestScripts\Climb.cs" />
+     <Compile Include="Assets\Scripts\TestScripts\CollectableManagerScript.cs" />
      <Compile Include="Assets\Scripts\TestScripts\DestroyFinishedParticle.cs" />
      <Compile Include="Assets\Scripts\TestScripts\FloatBehavior.cs" />
      <Compile Include="Assets\Scripts\TestScripts\HueShift.cs" />
      <Compile Include="Assets\Scripts\TestScripts\LadderZone.cs" />
+     <Compile Include="Assets\Scripts\TestScripts\OnCollect.cs" />
      <Compile Include="Assets\Scripts\TestScripts\RadialScript.cs" />
      <Compile Include="Assets\Scripts\TestScripts\ResetCamera.cs" />
      <Compile Include="Assets\Scripts\TestScripts\ShakeCamera.cs" />

@@ -6,9 +6,9 @@ public class FloatBehavior : MonoBehaviour
 {
 	float originalY;
 
-	public float floatStrength = 1; // You can change this in the Unity Editor to 
+	public float floatStrength = 1f; // You can change this in the Unity Editor to 
 	// change the range of y positions that are possible.
-	public float floatSpeed = 1;
+	public float floatSpeed = 1f;
 
 	void Start()
 	{
@@ -20,5 +20,7 @@ public class FloatBehavior : MonoBehaviour
 		transform.position = new Vector3(transform.position.x,
 			originalY + ((float)Math.Sin(Time.time * floatSpeed) * floatStrength),
 			transform.position.z);
+
+		//transform.Translate(0, ((float)Math.Sin(Time.time * floatSpeed) * floatStrength), 0, Space.World);
 	}
 }
