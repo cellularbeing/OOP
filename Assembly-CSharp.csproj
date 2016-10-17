@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ButtonColor.cs" />
      <Compile Include="Assets\Scripts\Behaviors\AbstractBehavior.cs" />
      <Compile Include="Assets\Scripts\Behaviors\FaceDirection.cs" />
      <Compile Include="Assets\Scripts\Behaviors\Jump.cs" />
