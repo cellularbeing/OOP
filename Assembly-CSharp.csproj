@@ -47,10 +47,12 @@
   <ItemGroup>
      <Compile Include="Assets\ButtonColor.cs" />
      <Compile Include="Assets\Scripts\Behaviors\AbstractBehavior.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\Enemy.cs" />
      <Compile Include="Assets\Scripts\Behaviors\FaceDirection.cs" />
      <Compile Include="Assets\Scripts\Behaviors\Jump.cs" />
      <Compile Include="Assets\Scripts\Behaviors\Melee.cs" />
      <Compile Include="Assets\Scripts\Behaviors\Walk.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\snakemovement.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraBoundsSwitching.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
