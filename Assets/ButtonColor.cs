@@ -23,30 +23,30 @@ public class ButtonColor : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	{
 		for(int k = 0; k <100; k++){
 			a.color = Color.clear;
-			for (int i=0; i<5; i++) 
+			for (int i=0; i<2; i++) 
 			{
-				a.color = Color.Lerp(Color.white, Color.red, (float)(i/(5f)));
+				a.color = Color.Lerp(Color.white, Color.red, (float)(i/(2f)));
 				yield return new WaitForSeconds (0.001f);
 			}
 			a.color = Color.red;
 			yield return new WaitForSeconds (.001f);
-			for (int j=0; j<5; j++) 
+			for (int j=0; j<2; j++) 
 			{
-				a.color = Color.Lerp(Color.red, Color.yellow, (float)(j/(5f)));
+				a.color = Color.Lerp(Color.red, Color.yellow, (float)(j/(2f)));
 				yield return new WaitForSeconds (0.001f);
 			}
 			a.color = Color.yellow;
 			yield return new WaitForSeconds (.001f);
-			for (int j=0; j<5; j++) 
+			for (int j=0; j<2; j++) 
 			{
-				a.color = Color.Lerp(Color.yellow, Color.blue, (float)(j/(5f)));
+				a.color = Color.Lerp(Color.yellow, Color.blue, (float)(j/(2f)));
 				yield return new WaitForSeconds (0.001f);
 			}
 			a.color = Color.blue;
 			yield return new WaitForSeconds (.001f);
-			for (int j=0; j<5; j++) 
+			for (int j=0; j<2; j++) 
 			{
-				a.color = Color.Lerp(Color.blue, Color.magenta, (float)(j/(5f)));
+				a.color = Color.Lerp(Color.blue, Color.magenta, (float)(j/(2f)));
 				yield return new WaitForSeconds (0.001f);
 			}
 		}

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ButtonColor.cs" />
+     <Compile Include="Assets\ObjectColor.cs" />
      <Compile Include="Assets\Scripts\Behaviors\AbstractBehavior.cs" />
      <Compile Include="Assets\Scripts\Behaviors\Enemy.cs" />
      <Compile Include="Assets\Scripts\Behaviors\FaceDirection.cs" />
