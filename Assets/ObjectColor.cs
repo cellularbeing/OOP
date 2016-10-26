@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class ObjectColor : MonoBehaviour {
 
-	void Update(){
-		
+	void Start(){
+		this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 	}
-	public void OnPointerEnter(PointerEventData eventData)
+	public void OnMouseEnter()
 	{
-		//theText.color = Color.red;
 		StartCoroutine ("objectFader");
+		//Debug.Log ("boop");
 	}
-	public void OnPointerExit(PointerEventData eventData)
+	public void OnMouseExit()
 	{
 		StopCoroutine ("objectFader");
+		this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 	}
 
-	public IEnumerator textFader()
+	public IEnumerator objectFader()
 	{
 		for(int k = 0; k <100; k++){
 			this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
