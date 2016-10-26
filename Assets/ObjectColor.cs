@@ -6,17 +6,28 @@ using UnityEngine.UI;
 public class ObjectColor : MonoBehaviour {
 
 	void Start(){
-		this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		if(this.gameObject.name == "SpaceFace01"){
+			this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		}
+		else
+			this.gameObject.GetComponent<Renderer> ().material.color = Color.white;
 	}
 	public void OnMouseEnter()
 	{
 		StartCoroutine ("objectFader");
+		if(this.gameObject.name == "SpaceFace01"){
+			this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		}
 		//Debug.Log ("boop");
 	}
 	public void OnMouseExit()
 	{
 		StopCoroutine ("objectFader");
-		this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		if(this.gameObject.name == "SpaceFace01"){
+			this.gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		}
+		else
+			this.gameObject.GetComponent<Renderer> ().material.color = Color.white;
 	}
 
 	public IEnumerator objectFader()
