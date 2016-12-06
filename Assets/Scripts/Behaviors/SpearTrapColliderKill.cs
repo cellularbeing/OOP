@@ -1,56 +1,37 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class Enemy : MonoBehaviour {
-	private int health;
-	private bool dead;
-	private Text loseText;
+public class SpearTrapColliderKill : MonoBehaviour {
+	private Animator animP;
 	private AudioSource audio;
+	private Text loseText;
 
 	// Use this for initialization
 	void Start () {
-		dead = false;
+		animP = this.transform.parent.gameObject.GetComponent<Animator>();
 		audio = this.GetComponent<AudioSource> ();
 		loseText = GameObject.Find("WinText").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (health <= 0) {
-			dead = true;
-		}
-	}
-		
-	public bool isDead(){
-		return dead;
-	}
-	public void setHealth(int h){
-		health = h;
-		print (health);
-	}
-	public void takeDamage(){
-		health--;
-		print (health);
-	}
-
-	public void takeDamage(int d){
-		health = health - d;
+	
 	}
 
 	void LoadNextLevel() {
 		SceneManager.LoadScene ("Level 1");
 	}
 
-	void OnCollisionEnter2D (Collision2D other) {
+	void OnTriggerStay2D (Collider2D other) {
 
-		if (other.gameObject.CompareTag ("Player")) {
+		if (other.gameObject.CompareTag ("Player") && animP.GetCurrentAnimatorStateInfo(0).IsName("SpearTrap_Attack")) {
 			Destroy(other.gameObject);
 			audio.Play ();
 			loseText.text = "Game Over";
 			Invoke ("LoadNextLevel", 2);
 		}
 	}
-
 }
+	

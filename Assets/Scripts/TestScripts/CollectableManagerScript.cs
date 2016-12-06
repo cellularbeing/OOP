@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CollectableManagerScript : MonoBehaviour {
 
@@ -9,6 +11,8 @@ public class CollectableManagerScript : MonoBehaviour {
 	public int maxCollectables = 2; //the total number of collectables the player must pick up to complete the level
 	public Transform collectablePrefab;
 	private AudioSource audioSource;
+	public Text uiText;
+	public Text winText;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +27,9 @@ public class CollectableManagerScript : MonoBehaviour {
 		Vector3 vec = spawnPoints[currentIndex].transform.position; 
 		Instantiate(collectablePrefab, vec, Quaternion.identity); //spawn the collectable prefab
 		audioSource = GetComponent<AudioSource>();
+		uiText = GameObject.Find("NumberCollectedText").GetComponent<Text>();
+		uiText.text = maxCollectables.ToString();
+		winText = GameObject.Find("WinText").GetComponent<Text>();
 	
 	}
 
@@ -31,11 +38,18 @@ public class CollectableManagerScript : MonoBehaviour {
 
 	}
 
+
+	void LoadNextLevel() {
+		SceneManager.LoadScene ("Level 1");
+	}
+
 	public void OnCollectNotification() {
 		audioSource.Play ();
 		numCollected++;
+		uiText.text = (maxCollectables - numCollected).ToString();
 		if (numCollected == maxCollectables) {
-			//level has been completed
+			winText.text = "Level Complete";
+			Invoke ("LoadNextLevel", 2);
 		}
 		else {
 		int newIndex = Random.Range (0, transform.childCount); //randomly choose a new spawn point for the next collectable
